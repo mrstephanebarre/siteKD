@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kateryna Dmytriyeva | Musician & Educator</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Serif/Classic) and Inter (Sans-serif/Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1a202c',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for Animations and Accents */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to right, #fbbf24, #fcd34d, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #334155;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-navy-950/80 border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-2xl font-bold tracking-widest text-white uppercase">
+                        K. <span class="text-gold-500">Dmytriyeva</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-gold-400 transition-colors text-sm uppercase tracking-wider font-medium">Profile</a>
+                    <a href="#experience" class="text-gray-300 hover:text-gold-400 transition-colors text-sm uppercase tracking-wider font-medium">Experience</a>
+                    <a href="#education" class="text-gray-300 hover:text-gold-400 transition-colors text-sm uppercase tracking-wider font-medium">Education</a>
+                    <a href="#achievements" class="text-gray-300 hover:text-gold-400 transition-colors text-sm uppercase tracking-wider font-medium">Achievements</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold-400 transition-colors text-sm uppercase tracking-wider font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-600 rounded-full mix-blend-screen filter blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-[120px]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            <span class="text-gold-500 font-medium tracking-[0.2em] uppercase mb-4 block fade-in-up">Musician & Educator based in Dubai, UAE</span>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 fade-in-up" style="transition-delay: 100ms;">
+                Kateryna <br/> <span class="gold-gradient-text">Dmytriyeva</span>
+            </h1>
+            <p class="max-w-2xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 fade-in-up" style="transition-delay: 200ms;">
+                A multi-instrumentalist with nearly two decades of dedication to music education, performance, and cultural exchange.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 fade-in-up" style="transition-delay: 300ms;">
+                <a href="#contact" class="px-8 py-3 bg-gold-600 hover:bg-gold-500 text-white rounded font-medium transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.4)]">
+                    Get in Touch
+                </a>
+                <a href="#about" class="px-8 py-3 bg-transparent border border-gray-600 hover:border-gold-500 hover:text-gold-400 text-white rounded font-medium transition-all duration-300">
+                    Discover My Work
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-500 hover:text-gold-400 transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-navy-900 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <h2 class="font-serif text-3xl md:text-5xl font-bold mb-6 text-white">The Art of <span class="text-gold-500">Multi-Instrumentalism</span></h2>
+                    <div class="w-20 h-1 bg-gold-500 mb-8"></div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+                        Originally from Ukraine and now based in Dubai, I am a multi-instrumental musician proficient in a diverse array of instruments including classical guitar, piano, acoustic guitar, electric guitar, bass guitar, ukulele, and Ukrainian folk instruments.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8 font-light">
+                        With formal music education and almost 20 years of dedication, my passion lies in teaching children and adults the profound language of music. My mastery of different musical styles—ranging from Baroque and classical to jazz, rock, and pop—enables me to connect with students from all cultural traditions.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-navy-800 border border-navy-700 rounded-full text-sm font-medium text-gray-300"><i class="fas fa-guitar text-gold-500 mr-2"></i>Classical Guitar</span>
+                        <span class="px-4 py-2 bg-navy-800 border border-navy-700 rounded-full text-sm font-medium text-gray-300"><i class="fas fa-music text-gold-500 mr-2"></i>Piano</span>
+                        <span class="px-4 py-2 bg-navy-800 border border-navy-700 rounded-full text-sm font-medium text-gray-300"><i class="fas fa-bolt text-gold-500 mr-2"></i>Electric/Bass</span>
+                        <span class="px-4 py-2 bg-navy-800 border border-navy-700 rounded-full text-sm font-medium text-gray-300"><i class="fas fa-drum text-gold-500 mr-2"></i>Ukulele & Folk</span>
+                    </div>
+                </div>
+                
+                <div class="relative fade-in-up" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-gold-600 rounded-lg transform translate-x-4 translate-y-4 opacity-50"></div>
+                    <div class="relative bg-navy-800 p-8 rounded-lg border border-navy-700 shadow-2xl">
+                        <i class="fas fa-quote-left text-4xl text-gold-500/30 mb-4 block"></i>
+                        <h3 class="font-serif text-2xl text-white mb-4">Contribution to the UAE's Cultural Landscape</h3>
+                        <p class="text-gray-400 font-light leading-relaxed italic">
+                            "As a music teacher and performer in Dubai, I have actively contributed to the cultural enrichment of the city. My performances in prestigious venues like Dubai Mall have promoted both the diversity of Ukrainian musical heritage and international music styles. Through my work, I have helped foster cross-cultural dialogue and understanding within Dubai's diverse expatriate community."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-navy-950 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-gold-500 font-medium tracking-[0.1em] uppercase text-sm">Professional Journey</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mt-2 text-white">Teaching Experience</h2>
+            </div>
+
+            <div class="relative pl-8 md:pl-0 fade-in-up">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-px bg-slate-700"></div>
+
+                <!-- Timeline Item 1 (Newest) -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="md:flex items-center justify-between w-full">
+                        <div class="md:w-5/12 order-1 md:text-right pr-8">
+                            <h3 class="text-2xl font-bold text-white font-serif">Private Music Teacher</h3>
+                            <p class="text-gold-400 font-medium mt-1">Dubai, UAE</p>
+                            <p class="text-gray-400 mt-2 font-light">Organizing annual music concerts (Spring/Christmas) for my students, preparing them for ABRSM examinations, and guiding them to significant achievements.</p>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-gold-500 shadow-[0_0_15px_rgba(245,158,11,0.5)] w-4 h-4 rounded-full absolute left-[-8px] md:left-1/2 md:-translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="md:w-5/12 order-1 pl-8 mt-2 md:mt-0">
+                            <span class="inline-block px-4 py-1 rounded-full bg-navy-800 text-gold-400 text-sm font-semibold border border-navy-700">2020 - Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="md:flex items-center justify-between w-full md:flex-row-reverse">
+                        <div class="md:w-5/12 order-1 md:text-left pl-0 md:pl-8">
+                            <h3 class="text-2xl font-bold text-white font-serif">Guitar & Piano Teacher</h3>
+                            <p class="text-gold-400 font-medium mt-1">Brooklyn Melodies Music Center, Dubai</p>
+                            <p class="text-gray-400 mt-2 font-light">Regular participant in center projects. Promoted cultural exchange and performed to represent the center in public venues such as Dubai Mall, City Walk, and private schools.</p>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-gold-500 shadow-[0_0_15px_rgba(245,158,11,0.5)] w-4 h-4 rounded-full absolute left-[-8px] md:left-1/2 md:-translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="md:w-5/12 order-1 md:text-right pr-0 md:pr-8 mt-2 md:mt-0">
+                            <span class="inline-block px-4 py-1 rounded-full bg-navy-800 text-gold-400 text-sm font-semibold border border-navy-700">2015 - 2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative">
+                    <div class="md:flex items-center justify-between w-full">
+                        <div class="md:w-5/12 order-1 md:text-right pr-8">
+                            <h3 class="text-2xl font-bold text-white font-serif">Guitar Teacher</h3>
+                            <p class="text-gold-400 font-medium mt-1">Government Art School #8, Donetsk</p>
+                            <p class="text-gray-400 mt-2 font-light">Taught classical guitar, shaped foundational techniques, and organized student ensembles. Published articles in scientific and music journals dedicated to arts and guitar performance.</p>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-gold-500 shadow-[0_0_15px_rgba(245,158,11,0.5)] w-4 h-4 rounded-full absolute left-[-8px] md:left-1/2 md:-translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="md:w-5/12 order-1 pl-8 mt-2 md:mt-0">
+                            <span class="inline-block px-4 py-1 rounded-full bg-navy-800 text-gold-400 text-sm font-semibold border border-navy-700">2004 - 2014</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-navy-900 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-gold-500 font-medium tracking-[0.1em] uppercase text-sm">Academic Background</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mt-2 text-white">Education & Degrees</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto font-light">Degrees officially approved by the Knowledge and Human Development Authority (KHDA), UAE.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education Card 1 -->
+                <div class="bg-navy-800/50 backdrop-blur-sm border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition-colors duration-300 fade-in-up group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-university text-8xl text-white"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-gold-400 font-bold tracking-widest text-sm mb-2 block">2008</span>
+                        <h3 class="text-2xl font-serif text-white mb-2">Donetsk National University of Ukraine</h3>
+                        <div class="h-px w-12 bg-gold-600 mb-4"></div>
+                        <p class="text-gray-300 font-light">
+                            Graduated as a teacher of art, history, and philosophy. Final diploma project focused on English music, literature, and architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="bg-navy-800/50 backdrop-blur-sm border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition-colors duration-300 fade-in-up group relative overflow-hidden" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-music text-8xl text-white"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-gold-400 font-bold tracking-widest text-sm mb-2 block">2004</span>
+                        <h3 class="text-2xl font-serif text-white mb-2">Donetsk Music College</h3>
+                        <div class="h-px w-12 bg-gold-600 mb-4"></div>
+                        <p class="text-gray-300 font-light">
+                            Graduated as a guitar teacher, music ensemble member, and orchestra conductor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-24 bg-navy-950 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-gold-500 font-medium tracking-[0.1em] uppercase text-sm">Highlights</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mt-2 text-white">Musical Achievements</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Achievement 1 -->
+                <div class="bg-navy-900 border border-navy-800 p-8 rounded-lg fade-in-up hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mb-6 border border-navy-700 text-gold-500 text-xl">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Performance Highlights</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                        Extensive performances from 2004-2014 in venues such as Donetsk Philharmonic and Dnipro Philharmonic. Later performed representing Brooklyn Melodies at Dubai Mall and City Walk.
+                    </p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="bg-navy-900 border border-navy-800 p-8 rounded-lg fade-in-up hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mb-6 border border-navy-700 text-gold-500 text-xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Workshops & Organizing</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                        Organizing team member for "Crystal Strings" Guitar Festival (Donetsk) and Moscow guitar festival (2013). Gave open lectures sharing guitar teaching methodologies (2014).
+                    </p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="bg-navy-900 border border-navy-800 p-8 rounded-lg fade-in-up hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mb-6 border border-navy-700 text-gold-500 text-xl">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Student Success</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                        Guided many students to significant achievements. Alumni have continued studies in prestigious music schools, passed ABRSM examinations, and won awards in international competitions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-navy-900 relative border-t border-gold-600/30">
+        <!-- Abstract Piano Keys Graphic in background -->
+        <div class="absolute bottom-0 right-0 opacity-5 pointer-events-none flex h-64">
+            <div class="w-16 border-l border-white h-full"></div>
+            <div class="w-16 border-l border-white h-4/5 bg-white"></div>
+            <div class="w-16 border-l border-white h-full"></div>
+            <div class="w-16 border-l border-white h-4/5 bg-white"></div>
+            <div class="w-16 border-l border-white h-full"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="fade-in-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Let's Create <span class="gold-gradient-text">Music</span> Together.</h2>
+                <p class="text-gray-400 font-light mb-12 max-w-2xl mx-auto text-lg">
+                    Whether you are looking for private piano or guitar lessons, masterclasses, or performance inquiries in Dubai, feel free to reach out.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <a href="mailto:katerinadmitrieva06@gmail.com" class="flex items-center p-6 bg-navy-800/50 border border-navy-700 rounded-xl hover:border-gold-500 hover:bg-navy-800 transition-all duration-300 group shadow-lg">
+                        <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform shadow-inner">
+                            <i class="fas fa-envelope text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-gray-500 text-xs mb-1 uppercase tracking-wider font-semibold">Email</span>
+                            <span class="text-gray-200 font-light tracking-wide text-sm md:text-base break-all">katerinadmitrieva06@gmail.com</span>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:+971557149511" class="flex items-center p-6 bg-navy-800/50 border border-navy-700 rounded-xl hover:border-gold-500 hover:bg-navy-800 transition-all duration-300 group shadow-lg">
+                        <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform shadow-inner">
+                            <i class="fas fa-phone-alt text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-gray-500 text-xs mb-1 uppercase tracking-wider font-semibold">Phone / WhatsApp</span>
+                            <span class="text-gray-200 font-light tracking-wide text-sm md:text-base">+971 55 714 9511</span>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/guitarlessons.dxb" target="_blank" class="flex items-center p-6 bg-navy-800/50 border border-navy-700 rounded-xl hover:border-gold-500 hover:bg-navy-800 transition-all duration-300 group shadow-lg">
+                        <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform shadow-inner">
+                            <i class="fab fa-instagram text-gold-500 text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-gray-500 text-xs mb-1 uppercase tracking-wider font-semibold">Instagram</span>
+                            <span class="text-gray-200 font-light tracking-wide uppercase text-sm md:text-base">@guitarlessons.dxb</span>
+                        </div>
+                    </a>
+
+                    <div class="flex items-center p-6 bg-navy-800/50 border border-navy-700 rounded-xl shadow-lg">
+                        <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mr-6 shadow-inner">
+                            <i class="fas fa-map-marker-alt text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-gray-500 text-xs mb-1 uppercase tracking-wider font-semibold">Location</span>
+                            <span class="text-gray-200 font-light tracking-wide text-sm md:text-base">Dubai, UAE <br/> P.O. Box 299527</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-950 py-8 border-t border-navy-800 text-center">
+        <p class="text-gray-500 text-sm font-light">
+            &copy; 2026 Kateryna Dmytriyeva. All rights reserved. <br/>
+            Musician, Ukrainian | Dubai, UAE
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'bg-navy-950/95');
+                    navbar.classList.remove('bg-navy-950/80');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'bg-navy-950/95');
+                    navbar.classList.add('bg-navy-950/80');
+                }
+            });
+
+            // Intersection Observer for scroll animations (fade-in-up)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatableElements = document.querySelectorAll('.fade-in-up');
+            animatableElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Trigger animations for elements already in view on load
+            setTimeout(() => {
+                animatableElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
